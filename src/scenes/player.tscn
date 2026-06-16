@@ -13,33 +13,59 @@
 radius = 28.571533
 height = 125.71428
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8v6aa"]
-atlas = ExtResource("1_8v6aa")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_lsi8j"]
+frames = 4
+frame_0/texture = ExtResource("2_0qy4j")
+frame_1/texture = ExtResource("3_8v6aa")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_4pcbe")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_xvyn7")
+frame_3/duration = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhiii"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpkk7"]
+bg_color = Color(0, 0.84313726, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_20pc6"]
+offsets = PackedFloat32Array(0.035019454, 0.9844358)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_myy50"]
+gradient = SubResource("Gradient_20pc6")
+fill = 1
+fill_from = Vector2(0.5, 0.491453)
+fill_to = Vector2(0.8888889, 0.17521368)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pcbe"]
 atlas = ExtResource("1_8v6aa")
-region = Rect2(64, 0, 64, 64)
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvyn7"]
 atlas = ExtResource("1_8v6aa")
-region = Rect2(128, 0, 64, 64)
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hlw3"]
 atlas = ExtResource("1_8v6aa")
-region = Rect2(192, 0, 64, 64)
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vu8n"]
 atlas = ExtResource("1_8v6aa")
-region = Rect2(256, 0, 64, 64)
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kc20y"]
 atlas = ExtResource("1_8v6aa")
-region = Rect2(320, 0, 64, 64)
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lsi8j"]
 atlas = ExtResource("1_8v6aa")
-region = Rect2(384, 0, 64, 64)
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twf7n"]
+atlas = ExtResource("1_8v6aa")
+region = Rect2(0, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhiii"]
 atlas = ExtResource("1_0qy4j")
@@ -73,9 +99,6 @@ region = Rect2(384, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8v6aa")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_4pcbe")
 }, {
 "duration": 1.0,
@@ -92,6 +115,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lsi8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twf7n")
 }],
 "loop": true,
 "name": &"attack",
@@ -125,34 +151,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4pcbe"]
-radius = 15.2812195
-height = 87.0625
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_lsi8j"]
-frames = 4
-frame_0/texture = ExtResource("2_0qy4j")
-frame_1/texture = ExtResource("3_8v6aa")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("4_4pcbe")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("5_xvyn7")
-frame_3/duration = 1.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhiii"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpkk7"]
-bg_color = Color(0, 0.84313726, 1, 1)
-
-[sub_resource type="Gradient" id="Gradient_20pc6"]
-offsets = PackedFloat32Array(0.035019454, 0.9844358)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_myy50"]
-gradient = SubResource("Gradient_20pc6")
-fill = 1
-fill_from = Vector2(0.5, 0.491453)
-fill_to = Vector2(0.8888889, 0.17521368)
+radius = 16.0
+height = 66.0
 
 [node name="Player" type="CharacterBody2D" unique_id=738607505]
 script = ExtResource("1_4pcbe")
@@ -168,18 +168,6 @@ position = Vector2(10.999999, 4.0000005)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_4vu8n")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1037747281]
-position = Vector2(-1.46875, -3.2812195)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_twf7n")
-frame_progress = 0.015936581
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=373600652]
-position = Vector2(8.53125, -4.2812195)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_4pcbe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1861850554]
 
@@ -213,11 +201,20 @@ fill_mode = 3
 show_percentage = false
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1185106480]
-position = Vector2(7.53125, -2.2812195)
 scale = Vector2(13.422851, 13.209962)
 color = Color(1, 0.74509805, 1, 1)
 energy = 0.68
 texture = SubResource("GradientTexture2D_myy50")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1037747281]
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_twf7n")
+animation = &"attack"
+frame_progress = 0.1923916
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=373600652]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4pcbe")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

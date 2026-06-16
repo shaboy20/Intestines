@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://banml6likuv4o"]
+
+[ext_resource type="Texture2D" uid="uid://bnih5hfdpvjnf" path="res://interlukin.png" id="1_le45p"]
+[ext_resource type="Script" uid="uid://l2pl6wl0xlu1" path="res://inter_lukin.gd" id="1_ljc8c"]
+[ext_resource type="PackedScene" uid="uid://d3ntaatdpkp2k" path="res://phagocyte.tscn" id="2_25clm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljc8c"]
+radius = 20.0
+height = 60.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_25clm"]
+radius = 12.0
+height = 52.0
+
+[node name="InterLukin" type="CharacterBody2D" unique_id=1697751645]
+script = ExtResource("1_ljc8c")
+enemy_spawn_scene = ExtResource("2_25clm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=19093141]
+texture = ExtResource("1_le45p")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1304745056]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=477843242]
+position = Vector2(-1, -4)
+shape = SubResource("CapsuleShape2D_ljc8c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102798746]
+position = Vector2(-1, -4)
+shape = SubResource("CapsuleShape2D_25clm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://cdc4bfcpu1aq1"]
+
+[ext_resource type="Script" uid="uid://swvy17mlbfp2" path="res://Anim.gd" id="1_2hac7"]
+[ext_resource type="Texture2D" uid="uid://bqrvoyw8pjje1" path="res://DendriticCellAttack.png" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://d3427i2unhfjn" path="res://DendriticCellIdle.png" id="2_2hac7"]
+[ext_resource type="Texture2D" uid="uid://caa4rtyd106xi" path="res://DendriticCellDeath.png" id="3_46e6m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tuhn"]
+atlas = ExtResource("1_s7bn3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gh4u"]
+atlas = ExtResource("1_s7bn3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_devvj"]
+atlas = ExtResource("1_s7bn3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b0ty"]
+atlas = ExtResource("1_s7bn3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg4s2"]
+atlas = ExtResource("1_s7bn3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s82l3"]
+atlas = ExtResource("3_46e6m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eeky"]
+atlas = ExtResource("3_46e6m")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cdkl"]
+atlas = ExtResource("3_46e6m")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc1dx"]
+atlas = ExtResource("2_2hac7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjvhd"]
+atlas = ExtResource("2_2hac7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7bn3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tuhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gh4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_devvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b0ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg4s2")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s82l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eeky")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_8cdkl")
+}],
+"loop": true,
+"name": &"death",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc1dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjvhd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hac7"]
+radius = 25.019993
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e6d4v"]
+radius = 24.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx1ty"]
+bg_color = Color(0.96467716, 0.36579147, 0.44944978, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46e6m"]
+bg_color = Color(0, 0.7172405, 0.39426312, 1)
+
+[node name="DendriticCell" type="CharacterBody2D" unique_id=1531359458]
+scale = Vector2(2, 2)
+script = ExtResource("1_2hac7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=39604726]
+position = Vector2(-2.5, 5)
+sprite_frames = SubResource("SpriteFrames_s7bn3")
+animation = &"death"
+frame_progress = 0.9161254
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1683147995]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=332702287]
+shape = SubResource("CircleShape2D_2hac7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=434216812]
+shape = SubResource("CircleShape2D_e6d4v")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=448256609]
+offset_left = -14.0
+offset_top = -43.0
+offset_right = 14.0
+offset_bottom = -38.5
+theme_override_styles/background = SubResource("StyleBoxFlat_mx1ty")
+theme_override_styles/fill = SubResource("StyleBoxFlat_46e6m")
+value = 100.0
+show_percentage = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

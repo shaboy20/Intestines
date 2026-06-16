@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b5mol0dogcm3f"]
+
+[ext_resource type="Script" uid="uid://bs4p1a8oc22xc" path="res://corrosive_enzyme.gd" id="1_6q2o8"]
+[ext_resource type="Texture2D" uid="uid://c0crdiwm1koq0" path="res://corrosiveEnzyme.png" id="1_q52gy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q2o8"]
+atlas = ExtResource("1_q52gy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a36jp"]
+atlas = ExtResource("1_q52gy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_humue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q2o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a36jp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q52gy"]
+radius = 17.117243
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6q2o8"]
+radius = 16.124516
+
+[node name="CorrosiveEnzyme" type="CharacterBody2D" unique_id=405418613]
+scale = Vector2(2, 2)
+script = ExtResource("1_6q2o8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=449363224]
+sprite_frames = SubResource("SpriteFrames_humue")
+frame_progress = 0.46031925
+
+[node name="Area2D" type="Area2D" parent="." unique_id=93142447]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1995523733]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_q52gy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1777952053]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_6q2o8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

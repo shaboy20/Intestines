@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://d3ntaatdpkp2k"]
+
+[ext_resource type="Texture2D" uid="uid://r6rqkly0atx1" path="res://PhagocyteMoving.png" id="1_1bj2h"]
+[ext_resource type="Script" uid="uid://bhl7mbreqt7gs" path="res://phagocyte.gd" id="1_b0fui"]
+[ext_resource type="Texture2D" uid="uid://884cvmkm320h" path="res://PhagocyteAttack.png" id="2_bdmq8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n6m4"]
+atlas = ExtResource("2_bdmq8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xvqf"]
+atlas = ExtResource("2_bdmq8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84kr4"]
+atlas = ExtResource("2_bdmq8")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i28ys"]
+atlas = ExtResource("2_bdmq8")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u8g5"]
+atlas = ExtResource("2_bdmq8")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqebd"]
+atlas = ExtResource("2_bdmq8")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0fui"]
+atlas = ExtResource("1_1bj2h")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdmq8"]
+atlas = ExtResource("1_1bj2h")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we4my"]
+atlas = ExtResource("1_1bj2h")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y15dm"]
+atlas = ExtResource("1_1bj2h")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usam3"]
+atlas = ExtResource("1_1bj2h")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slijo"]
+atlas = ExtResource("1_1bj2h")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i63d7"]
+atlas = ExtResource("1_1bj2h")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uckcw"]
+atlas = ExtResource("1_1bj2h")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1n6m4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n6m4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xvqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84kr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i28ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u8g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqebd")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0fui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdmq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we4my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y15dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usam3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slijo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i63d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uckcw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bj2h"]
+radius = 28.004463
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b0fui"]
+radius = 21.523243
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdmq8"]
+bg_color = Color(0.9907289, 0.3209944, 0.48704082, 1)
+
+[node name="Phagocyte" type="CharacterBody2D" unique_id=1068014844]
+rotation = 3.1415927
+scale = Vector2(2, 2)
+script = ExtResource("1_b0fui")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1220952681]
+sprite_frames = SubResource("SpriteFrames_1n6m4")
+animation = &"Attack"
+frame_progress = 0.36693624
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1701497705]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1798075428]
+position = Vector2(-1.3113416e-07, -1.5)
+shape = SubResource("CircleShape2D_1bj2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490544429]
+position = Vector2(-0.5, 4.3711367e-08)
+shape = SubResource("CircleShape2D_b0fui")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=223905827]
+offset_left = -16.499996
+offset_top = 36.0
+offset_right = 16.243595
+offset_bottom = 40.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_bdmq8")
+value = 100.0
+rounded = true
+show_percentage = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

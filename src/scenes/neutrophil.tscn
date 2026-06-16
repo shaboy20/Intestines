@@ -1,35 +1,35 @@
 [gd_scene format=3 uid="uid://cuwg8v7t2j4j2"]
 
-[ext_resource type="Script" uid="uid://bjs0ok804r0xq" path="res://neutrophil.gd" id="1_isier"]
-[ext_resource type="PackedScene" uid="uid://b5mol0dogcm3f" path="res://corrosive_enzyme.tscn" id="2_c6chf"]
-[ext_resource type="Texture2D" uid="uid://mksuumlk5kw4" path="res://NeutrophilIdlev2-sheet.png" id="3_c6chf"]
+[ext_resource type="Script" path="res://neutrophil.gd" id="1_isier"]
+[ext_resource type="PackedScene" uid="uid://b5mol0dogcm3f" path="res://src/scenes/corrosive_enzyme.tscn" id="2_c6chf"]
+[ext_resource type="Texture2D" uid="uid://c4j2arwakba1w" path="res://assets/sprites/enemy/neutrophil/neutrophil-idle.png" id="3_0mymh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_isier"]
 radius = 21.592823
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e7hq8"]
-atlas = ExtResource("3_c6chf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y4bs"]
+atlas = ExtResource("3_0mymh")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ynjvw"]
-atlas = ExtResource("3_c6chf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_15rsf"]
+atlas = ExtResource("3_0mymh")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b65gr"]
-atlas = ExtResource("3_c6chf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x0sy"]
+atlas = ExtResource("3_0mymh")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qakbk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e7hq8")
+"texture": SubResource("AtlasTexture_0y4bs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ynjvw")
+"texture": SubResource("AtlasTexture_15rsf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b65gr")
+"texture": SubResource("AtlasTexture_1x0sy")
 }],
 "loop": true,
 "name": &"default",
@@ -52,7 +52,6 @@ shape = SubResource("CircleShape2D_isier")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1580619046]
 sprite_frames = SubResource("SpriteFrames_qakbk")
-frame_progress = 0.13699484
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1675321932]
 offset_left = -33.5

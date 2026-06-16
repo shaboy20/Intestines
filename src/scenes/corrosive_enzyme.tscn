@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5mol0dogcm3f"]
 
-[ext_resource type="Script" path="res://corrosive_enzyme.gd" id="1_6q2o8"]
+[ext_resource type="Script" uid="uid://onvacvmi2lwn" path="res://src/scripts/corrosive_enzyme.gd" id="1_vytnf"]
 [ext_resource type="Texture2D" uid="uid://dkj1fnclm1edg" path="res://assets/sprites/enemy/corrosive-enzyme/corrosive-enzyme.png" id="2_vytnf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6thp"]
@@ -33,7 +33,7 @@ radius = 16.124516
 
 [node name="CorrosiveEnzyme" type="CharacterBody2D" unique_id=405418613]
 scale = Vector2(2, 2)
-script = ExtResource("1_6q2o8")
+script = ExtResource("1_vytnf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=449363224]
 sprite_frames = SubResource("SpriteFrames_humue")

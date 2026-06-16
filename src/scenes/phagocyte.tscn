@@ -1,114 +1,114 @@
 [gd_scene format=3 uid="uid://d3ntaatdpkp2k"]
 
-[ext_resource type="Texture2D" uid="uid://r6rqkly0atx1" path="res://PhagocyteMoving.png" id="1_1bj2h"]
-[ext_resource type="Script" uid="uid://bhl7mbreqt7gs" path="res://phagocyte.gd" id="1_b0fui"]
-[ext_resource type="Texture2D" uid="uid://884cvmkm320h" path="res://PhagocyteAttack.png" id="2_bdmq8"]
+[ext_resource type="Script" uid="uid://dyts3pq4dfg1v" path="res://src/scripts/phagocyte.gd" id="1_8hym3"]
+[ext_resource type="Texture2D" uid="uid://b13w23kbg4snc" path="res://assets/sprites/enemy/phagocyte/phagocyte-attack.png" id="2_8hym3"]
+[ext_resource type="Texture2D" uid="uid://dsvbwroina5lm" path="res://assets/sprites/enemy/phagocyte/phagocyte-move.png" id="3_c4d3t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1n6m4"]
-atlas = ExtResource("2_bdmq8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqgun"]
+atlas = ExtResource("2_8hym3")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xvqf"]
-atlas = ExtResource("2_bdmq8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_m78xj"]
+atlas = ExtResource("2_8hym3")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_84kr4"]
-atlas = ExtResource("2_bdmq8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak1qf"]
+atlas = ExtResource("2_8hym3")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i28ys"]
-atlas = ExtResource("2_bdmq8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jif4k"]
+atlas = ExtResource("2_8hym3")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1u8g5"]
-atlas = ExtResource("2_bdmq8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubp12"]
+atlas = ExtResource("2_8hym3")
 region = Rect2(256, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hqebd"]
-atlas = ExtResource("2_bdmq8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g13yv"]
+atlas = ExtResource("2_8hym3")
 region = Rect2(320, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b0fui"]
-atlas = ExtResource("1_1bj2h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiwxg"]
+atlas = ExtResource("3_c4d3t")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bdmq8"]
-atlas = ExtResource("1_1bj2h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kxyo"]
+atlas = ExtResource("3_c4d3t")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_we4my"]
-atlas = ExtResource("1_1bj2h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_atxbm"]
+atlas = ExtResource("3_c4d3t")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y15dm"]
-atlas = ExtResource("1_1bj2h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_udqij"]
+atlas = ExtResource("3_c4d3t")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_usam3"]
-atlas = ExtResource("1_1bj2h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nnwy"]
+atlas = ExtResource("3_c4d3t")
 region = Rect2(256, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_slijo"]
-atlas = ExtResource("1_1bj2h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_u12yi"]
+atlas = ExtResource("3_c4d3t")
 region = Rect2(320, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i63d7"]
-atlas = ExtResource("1_1bj2h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv63l"]
+atlas = ExtResource("3_c4d3t")
 region = Rect2(384, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uckcw"]
-atlas = ExtResource("1_1bj2h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjnia"]
+atlas = ExtResource("3_c4d3t")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1n6m4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1n6m4")
+"texture": SubResource("AtlasTexture_pqgun")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6xvqf")
+"texture": SubResource("AtlasTexture_m78xj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_84kr4")
+"texture": SubResource("AtlasTexture_ak1qf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i28ys")
+"texture": SubResource("AtlasTexture_jif4k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1u8g5")
+"texture": SubResource("AtlasTexture_ubp12")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hqebd")
+"texture": SubResource("AtlasTexture_g13yv")
 }],
 "loop": true,
-"name": &"Attack",
+"name": &"attack",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b0fui")
+"texture": SubResource("AtlasTexture_jiwxg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bdmq8")
+"texture": SubResource("AtlasTexture_7kxyo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_we4my")
+"texture": SubResource("AtlasTexture_atxbm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y15dm")
+"texture": SubResource("AtlasTexture_udqij")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_usam3")
+"texture": SubResource("AtlasTexture_1nnwy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_slijo")
+"texture": SubResource("AtlasTexture_u12yi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i63d7")
+"texture": SubResource("AtlasTexture_fv63l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uckcw")
+"texture": SubResource("AtlasTexture_yjnia")
 }],
 "loop": true,
 "name": &"default",
@@ -127,12 +127,11 @@ bg_color = Color(0.9907289, 0.3209944, 0.48704082, 1)
 [node name="Phagocyte" type="CharacterBody2D" unique_id=1068014844]
 rotation = 3.1415927
 scale = Vector2(2, 2)
-script = ExtResource("1_b0fui")
+script = ExtResource("1_8hym3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1220952681]
 sprite_frames = SubResource("SpriteFrames_1n6m4")
-animation = &"Attack"
-frame_progress = 0.36693624
+animation = &"attack"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1701497705]
 

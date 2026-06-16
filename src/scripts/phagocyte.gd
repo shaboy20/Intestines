@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	if player == null:
 		return
 	
-	if sprite.is_playing() and sprite.animation == "Attack" and not is_attacking:
+	if sprite.is_playing() and sprite.animation == "attack" and not is_attacking:
 		pass
 	else:
 		sprite.play("default")
@@ -68,7 +68,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("player_take_damage"):
 		is_attacking = true
-		sprite.play("Attack")
+		sprite.play("attack")
 		await get_tree().create_timer(0.05).timeout
 		body.player_take_damage(10)
 		await get_tree().create_timer(1.0).timeout

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gseaeeh2nwf4"
-path="res://.godot/imported/BacteriaMovingFixed.png-e0bbae648c1470cdb5a865d0bea168d1.ctex"
+uid="uid://cd50dlprgqqcl"
+path="res://.godot/imported/move.png-1885d178fd1a80ee7c75470dcd85879a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/BacteriaMovingFixed.png"
-dest_files=["res://.godot/imported/BacteriaMovingFixed.png-e0bbae648c1470cdb5a865d0bea168d1.ctex"]
+source_file="res://assets/sprites/player/move.png"
+dest_files=["res://.godot/imported/move.png-1885d178fd1a80ee7c75470dcd85879a.ctex"]
 
 [params]
 

@@ -54,14 +54,14 @@ func _physics_process(delta: float) -> void:
 	progress_bar.value = health
 	if is_attacking:
 	
-		sprite.play("Attack")
+		sprite.play("attack")
 
 	else:
 		sprite.play("default")
 	if Input.is_action_pressed("rotate_left") and not is_attacking:
 		rotation_degrees -= 180 * delta;
 	if Input.is_action_pressed("rotate_right") and not is_attacking:
-		rotation_degrees += 180  * delta;
+		rotation_degrees += 180 * delta;
 	var forward_vector = Vector2.RIGHT.rotated(rotation)
 	if Input.is_action_pressed("move_forward") and not is_attacking:
 		velocity = forward_vector * SPEED * delta
@@ -76,7 +76,7 @@ func _physics_process(delta: float) -> void:
 			is_attacking = true
 			dash()
 			area_2d.scale = Vector2(0.8,0.8)
-			sprite.play("Attack")
+			sprite.play("attack")
 			await get_tree().create_timer(0.5).timeout
 			is_attacking = false
 			area_2d.scale = Vector2(0.2,0.2)

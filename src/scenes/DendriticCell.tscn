@@ -112,7 +112,7 @@ script = ExtResource("1_q15jx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=39604726]
 position = Vector2(-2.5, 5)
 sprite_frames = SubResource("SpriteFrames_s7bn3")
-animation = &"death"
+animation = &"default"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1683147995]
 

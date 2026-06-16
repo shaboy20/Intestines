@@ -7,7 +7,7 @@ var health : int = 100;
 var bullet_cooldown = false
 var is_taking_knockback = false
 var paused_movment = false
-@onready var bullet_spawn_scene : PackedScene = preload("res://inter_lukin.tscn")
+@onready var bullet_spawn_scene : PackedScene = preload("res://src/scenes/inter_lukin.tscn")
 @onready var progress_bar : ProgressBar = $ProgressBar
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://banml6likuv4o"]
 
-[ext_resource type="Script" path="res://inter_lukin.gd" id="1_ljc8c"]
-[ext_resource type="PackedScene" uid="uid://d3ntaatdpkp2k" path="res://src/scenes/phagocyte.tscn" id="2_25clm"]
+[ext_resource type="Script" uid="uid://d2xq54nambj78" path="res://src/scripts/inter_lukin.gd" id="2_i1db0"]
 [ext_resource type="Texture2D" uid="uid://41ygiv4bjuek" path="res://assets/sprites/enemy/interlukin/interlukin.png" id="3_o3a1c"]
+[ext_resource type="PackedScene" uid="uid://d3ntaatdpkp2k" path="res://src/scenes/phagocyte.tscn" id="4_25clm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljc8c"]
 radius = 20.0
@@ -13,8 +13,8 @@ radius = 12.0
 height = 52.0
 
 [node name="InterLukin" type="CharacterBody2D" unique_id=1697751645]
-script = ExtResource("1_ljc8c")
-enemy_spawn_scene = ExtResource("2_25clm")
+script = ExtResource("2_i1db0")
+enemy_spawn_scene = ExtResource("4_25clm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=19093141]
 texture = ExtResource("3_o3a1c")

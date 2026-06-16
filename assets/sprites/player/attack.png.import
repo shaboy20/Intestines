@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhn5tx0rb2snp"
-path="res://.godot/imported/BacteriaMoving.png-fa083ed37fa8e0d5a297f2856c31a5ad.ctex"
+uid="uid://dnteyosbroo6f"
+path="res://.godot/imported/attack.png-297458346acc0dc550be95872f2d685c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/BacteriaMoving.png"
-dest_files=["res://.godot/imported/BacteriaMoving.png-fa083ed37fa8e0d5a297f2856c31a5ad.ctex"]
+source_file="res://assets/sprites/player/attack.png"
+dest_files=["res://.godot/imported/attack.png-297458346acc0dc550be95872f2d685c.ctex"]
 
 [params]
 

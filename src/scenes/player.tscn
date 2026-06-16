@@ -75,26 +75,6 @@ region = Rect2(0, 0, 64, 64)
 atlas = ExtResource("1_0qy4j")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_myy50"]
-atlas = ExtResource("1_0qy4j")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_usugt"]
-atlas = ExtResource("1_0qy4j")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3qshy"]
-atlas = ExtResource("1_0qy4j")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5acq0"]
-atlas = ExtResource("1_0qy4j")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5h06g"]
-atlas = ExtResource("1_0qy4j")
-region = Rect2(384, 0, 64, 64)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_twf7n"]
 animations = [{
 "frames": [{
@@ -121,7 +101,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -129,21 +109,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpkk7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_myy50")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_usugt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3qshy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5acq0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5h06g")
 }],
 "loop": true,
 "name": &"default",
@@ -210,7 +175,6 @@ texture = SubResource("GradientTexture2D_myy50")
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_twf7n")
 animation = &"attack"
-frame_progress = 0.1923916
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=373600652]
 rotation = 1.5707964

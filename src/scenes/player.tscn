@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c8vab7d1ssvrl" path="res://assets/sprites/ui/health-bar/fill.png" id="3_8v6aa"]
 [ext_resource type="Texture2D" uid="uid://k505csgyxbhc" path="res://assets/sprites/ui/health-bar/fill2.png" id="4_4pcbe"]
 [ext_resource type="Texture2D" uid="uid://bew26b3v2wd3m" path="res://assets/sprites/ui/health-bar/fill3.png" id="5_xvyn7"]
-[ext_resource type="Script" uid="uid://crbsxarriwwsj" path="res://src/scripts/camera_2d.gd" id="9_xvyn7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vu8n"]
 radius = 35.93765
@@ -188,7 +187,6 @@ script = ExtResource("1_4pcbe")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1483345997]
 position = Vector2(-2.46875, -9.2812195)
 rotation = 1.5707964
-ignore_rotation = false
 zoom = Vector2(1.3, 1.3)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=333081540]

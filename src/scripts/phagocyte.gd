@@ -19,10 +19,7 @@ func take_damage(num : int):
 	progress_bar.value = health
 	print("enemy health " , health)
 	take_knockback()
-	is_stunned = true
-	sprite.play("damaged")
-	await get_tree().create_timer(2).timeout
-	is_stunned = false
+
 	
 func take_knockback() -> void:
 	is_taking_knockback = true
@@ -30,7 +27,10 @@ func take_knockback() -> void:
 	await get_tree().create_timer(0.2).timeout
 	is_taking_knockback = false
 	print(is_taking_knockback)
-	
+	is_stunned = true
+	sprite.play("damaged")
+	await get_tree().create_timer(1).timeout
+	is_stunned = false
 	
 
 

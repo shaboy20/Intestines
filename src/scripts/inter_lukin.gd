@@ -36,7 +36,7 @@ func spawn_enemy(amount : int):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("player_take_damage"):
 		body.player_take_damage(10)
-		spawn_enemy(randi_range(1,2))
+		spawn_enemy(1)
 		queue_free()
 	if bullet_age >= 1.0:
 		queue_free()

@@ -25,9 +25,9 @@ func _physics_process(delta: float) -> void:
 	elif is_taking_knockback:
 		velocity = direction_to_player * speed * delta * -10
 	if global_position.distance_to(player.global_position) < 200 && not spawn_cooldown:
-		spawn_enemy(randi_range(4,5))
+		spawn_enemy(3)
 		spawn_cooldown = true
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(4).timeout
 		spawn_cooldown = false
 	if global_position.distance_to(player.global_position) <= 740  and global_position.distance_to(player.global_position) >= 200 and not bullet_cooldown:
 		bullet_cooldown = true

@@ -36,7 +36,7 @@ func _physics_process(delta):
 				if not is_stunned and not paused_movment:
 					move_and_slide()
 		
-			if is_taking_knockback and not paused_movment:
+			if is_taking_knockback:
 				velocity = -direction * speed * 10 * delta
 				move_and_slide()
 

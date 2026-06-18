@@ -15,13 +15,14 @@ var timer_not_allready_created : bool = false
 var is_attacking = false;
 var health = 100
 var is_dashing = false
+var iframes = false
 func _ready():
 	var screen_height = get_viewport().get_visible_rect().size.x
 	var screen_base = get_viewport().get_visible_rect().size.y
 
 
 func player_take_damage(damage:int):
-	if not is_attacking && not is_taking_knockback:
+	if not is_attacking && not is_taking_knockback and not iframes:
 		is_taking_knockback = true
 		health -= damage
 		progress_bar.value = health
@@ -47,8 +48,10 @@ func set_attack_cooldown():
 		await get_tree().create_timer(0.2).timeout
 		is_in_cooldown = false
 		
-
-
+func set_iframes(time : float):
+	iframes = true
+	await get_tree().create_timer(time).timeout
+	iframes = false
 
 func _physics_process(delta: float) -> void:
 	progress_bar.value = health
@@ -99,10 +102,11 @@ func _process(_delta: float) -> void:
 
 func set_attack():
 	is_attacking = true
-	area_2d.scale = Vector2(0.7,0.7)	
+	area_2d.scale = Vector2(1,1)	
 	await get_tree().create_timer(0.5).timeout
 	area_2d.scale = Vector2(0.2,0.2)
 	is_attacking = false
+	set_iframes(0.3)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body)

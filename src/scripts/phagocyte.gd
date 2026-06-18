@@ -26,7 +26,7 @@ func take_damage(num : int):
 func take_knockback() -> void:
 	is_taking_knockback = true
 	print(is_taking_knockback)
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.4).timeout
 	is_taking_knockback = false
 	print(is_taking_knockback)
 	is_stunned = true

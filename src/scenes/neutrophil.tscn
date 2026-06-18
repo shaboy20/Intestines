@@ -2,10 +2,23 @@
 
 [ext_resource type="Script" uid="uid://5m4amuufuxit" path="res://src/scripts/neutrophil.gd" id="2_fmbjf"]
 [ext_resource type="Texture2D" uid="uid://c4j2arwakba1w" path="res://assets/sprites/enemy/neutrophil/neutrophil-idle.png" id="3_0mymh"]
+[ext_resource type="Texture2D" uid="uid://bkec46nhxned6" path="res://assets/sprites/enemy/neutrophil/neutrophil-damaged.png" id="3_0y4bs"]
 [ext_resource type="PackedScene" uid="uid://b5mol0dogcm3f" path="res://src/scenes/corrosive_enzyme.tscn" id="4_6q8s3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_isier"]
 radius = 21.592823
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm4my"]
+atlas = ExtResource("3_0y4bs")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e1jd"]
+atlas = ExtResource("3_0y4bs")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pojjl"]
+atlas = ExtResource("3_0y4bs")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0y4bs"]
 atlas = ExtResource("3_0mymh")
@@ -21,6 +34,20 @@ region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qakbk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm4my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e1jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pojjl")
+}],
+"loop": true,
+"name": &"damaged",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0y4bs")
@@ -52,6 +79,8 @@ shape = SubResource("CircleShape2D_isier")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1580619046]
 sprite_frames = SubResource("SpriteFrames_qakbk")
+animation = &"damaged"
+frame_progress = 0.1043191
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1675321932]
 offset_left = -33.5

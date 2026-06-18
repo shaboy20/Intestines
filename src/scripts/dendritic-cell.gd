@@ -9,13 +9,14 @@ var is_stunned : bool = false
 var player_in_collider = null
 var is_reatreating = false
 var is_taking_knockback : bool = false
+var is_attacking = false
 func _physics_process(delta):
 	if is_dying:
 		pass
 	else:
 		var roll = randf_range(0,1)
-		if sprite.is_playing() and sprite.animation == "attack":
-			pass
+		if is_attacking:
+			sprite.play("attack")
 		else:
 			sprite.play("default")
 		player = get_tree().current_scene.find_child("Player", true, false) as CharacterBody2D
@@ -69,3 +70,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	sprite.play("attack")
 	if body.has_method("player_take_damage") and not is_stunned && not is_dying:
 		body.player_take_damage(10)
+		is_attacking = true
+		await get_tree().create_timer(1.0).timeout

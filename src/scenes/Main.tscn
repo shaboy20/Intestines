@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://d3y1kf3j33q85"]
 
 [ext_resource type="PackedScene" uid="uid://b27owl5g6w35s" path="res://src/scenes/intestine_tile.tscn" id="1_glv2v"]
-[ext_resource type="PackedScene" uid="uid://cdc4bfcpu1aq1" path="res://src/scenes/DendriticCell.tscn" id="2_q15jx"]
 [ext_resource type="PackedScene" uid="uid://c1c06mpxeddiq" path="res://src/scenes/player.tscn" id="3_akft7"]
 [ext_resource type="PackedScene" uid="uid://d3ntaatdpkp2k" path="res://src/scenes/phagocyte.tscn" id="4_lgr22"]
 [ext_resource type="PackedScene" uid="uid://cuwg8v7t2j4j2" path="res://src/scenes/neutrophil.tscn" id="5_5vvyt"]
@@ -22,13 +21,12 @@ scale = Vector2(4, 4)
 
 [node name="EnemySpawner" parent="." unique_id=781746426 instance=ExtResource("6_3dxm6")]
 position = Vector2(3645, 6)
-enemy_spawn_scene = ExtResource("2_q15jx")
+enemy_spawn_scene = ExtResource("4_lgr22")
 spawn_amount = 5
 
 [node name="EnemySpawner2" parent="." unique_id=1378583433 instance=ExtResource("6_3dxm6")]
 position = Vector2(212, 0)
 enemy_spawn_scene = ExtResource("4_lgr22")
-spawn_amount = 5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=565678644]
 environment = SubResource("Environment_20pc6")
@@ -38,13 +36,32 @@ color = Color(0.48513827, 0.5674974, 0.6041015, 1)
 
 [node name="EnemySpawner3" parent="." unique_id=468059659 instance=ExtResource("6_3dxm6")]
 position = Vector2(13, 28)
-enemy_spawn_scene = ExtResource("5_5vvyt")
-spawn_amount = 1
+enemy_spawn_scene = ExtResource("4_lgr22")
+spawn_amount = 2
 
 [node name="EnemySpawner4" parent="." unique_id=1348681694 instance=ExtResource("6_3dxm6")]
 position = Vector2(2491, -8)
-enemy_spawn_scene = ExtResource("5_5vvyt")
+enemy_spawn_scene = ExtResource("4_lgr22")
 spawn_amount = 2
 
 [node name="Player" parent="." unique_id=738607505 instance=ExtResource("3_akft7")]
 position = Vector2(-2565, 80)
+
+[node name="EnemySpawner5" parent="." unique_id=1395063238 instance=ExtResource("6_3dxm6")]
+position = Vector2(1245, 13)
+enemy_spawn_scene = ExtResource("4_lgr22")
+spawn_amount = 3
+
+[node name="EnemySpawner6" parent="." unique_id=1486915951 instance=ExtResource("6_3dxm6")]
+position = Vector2(11907, 58)
+enemy_spawn_scene = ExtResource("4_lgr22")
+spawn_amount = 3
+
+[node name="EnemySpawner7" parent="." unique_id=1849477338 instance=ExtResource("6_3dxm6")]
+position = Vector2(11210, 2251)
+enemy_spawn_scene = ExtResource("5_5vvyt")
+spawn_amount = 5
+
+[node name="EnemySpawner8" parent="." unique_id=1518972376 instance=ExtResource("6_3dxm6")]
+enemy_spawn_scene = ExtResource("4_lgr22")
+spawn_amount = 5

@@ -79,8 +79,7 @@ shape = SubResource("CircleShape2D_isier")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1580619046]
 sprite_frames = SubResource("SpriteFrames_qakbk")
-animation = &"damaged"
-frame_progress = 0.1043191
+frame_progress = 0.94773364
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1675321932]
 offset_left = -33.5
@@ -95,6 +94,6 @@ show_percentage = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1837259689]
 shape = SubResource("CircleShape2D_c6chf")
-debug_color = Color(0.8484358, 0.14409074, 0.83972657, 0.41960785)
+debug_color = Color(0.101012714, 0.5449005, 0.92631936, 0.41960785)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

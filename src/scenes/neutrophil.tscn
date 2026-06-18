@@ -79,7 +79,7 @@ shape = SubResource("CircleShape2D_isier")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1580619046]
 sprite_frames = SubResource("SpriteFrames_qakbk")
-frame_progress = 0.94773364
+frame_progress = 0.06201032
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1675321932]
 offset_left = -33.5

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Intestines"
-run/main_scene="uid://d3y1kf3j33q85"
+run/main_scene="uid://tpwl25rvsgc8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

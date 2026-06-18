@@ -1,9 +1,51 @@
-[gd_scene format=3 uid="uid://1h1xffwbaccl"]
+[gd_scene format=3 uid="uid://tpwl25rvsgc8"]
 
-[node name="Control" type="Control" unique_id=1938707648]
+[ext_resource type="Script" uid="uid://dg4m0ncgnommq" path="res://src/scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="FontFile" uid="uid://cvk5nsfgwdaa7" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="2_mob6k"]
+[ext_resource type="Texture2D" uid="uid://b4b5pm8xli65u" path="res://assets/background.png" id="3_rkeyg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mob6k"]
+texture = ExtResource("3_rkeyg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mob6k"]
+bg_color = Color(1, 0.29732522, 0.5207068, 1)
+
+[node name="MainMenu" type="Node2D" unique_id=1666631314]
+script = ExtResource("1_06t4h")
+
+[node name="buttonManager" type="Control" parent="." unique_id=291951347]
 layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Panel" type="Panel" parent="buttonManager" unique_id=1419270104]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mob6k")
+
+[node name="Start" type="Button" parent="buttonManager" unique_id=1877874415]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -53.0
+offset_right = 151.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_mob6k")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_mob6k")
+text = "start"
+
+[connection signal="pressed" from="buttonManager/Start" to="." method="_on_start_pressed"]

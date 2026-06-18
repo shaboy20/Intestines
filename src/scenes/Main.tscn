@@ -69,9 +69,11 @@ enemy_spawn_scene = ExtResource("5_5vvyt")
 spawn_amount = 5
 
 [node name="EnemySpawner8" parent="." unique_id=1518972376 instance=ExtResource("6_3dxm6")]
+position = Vector2(-417, 25)
 enemy_spawn_scene = ExtResource("4_lgr22")
-spawn_amount = 5
+spawn_amount = 1
 
 [node name="EnemySpawner10" parent="." unique_id=1371476819 instance=ExtResource("6_3dxm6")]
+position = Vector2(13, 80)
 enemy_spawn_scene = ExtResource("2_q15jx")
-spawn_amount = 5
+spawn_amount = 1

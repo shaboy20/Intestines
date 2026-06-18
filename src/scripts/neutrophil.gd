@@ -29,7 +29,7 @@ func set_retreat():
 
 func _physics_process(delta: float) -> void:
 	var chance = randf_range(0,1)
-	if chance <= 0.2 and health <= 50 and not retreat_cooldown:
+	if chance <= 0.4 and health <= 50 and not retreat_cooldown:
 		set_retreat()	
 	player = get_tree().current_scene.find_child("Player", true, false) as CharacterBody2D
 	var direction_to_player = (player.global_position - global_position).normalized()
@@ -46,14 +46,13 @@ func _physics_process(delta: float) -> void:
 	if global_position.distance_to(player.global_position) < 200 && not spawn_cooldown:
 		spawn_enemy(1)
 		spawn_cooldown = true
-		await get_tree().create_timer(4).timeout
+		await get_tree().create_timer(2).timeout
 		spawn_cooldown = false
 	if global_position.distance_to(player.global_position) <= 740  and global_position.distance_to(player.global_position) >= 200 and not bullet_cooldown:
 		bullet_cooldown = true
-		pause_movment()
 		await get_tree().create_timer(0.1).timeout
 		spawn_bullet(1)
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(5).timeout
 		bullet_cooldown = false
 		
 
@@ -70,9 +69,9 @@ func _process(delta: float) -> void:
 
 
 func pause_movment():
-	is_taking_knockback = true
+	is_stunned = true
 	await get_tree().create_timer(0.1).timeout
-	is_taking_knockback = false
+	is_stunned = true
 	
 func take_damage(num : int):
 	health -= num
@@ -103,8 +102,10 @@ func spawn_enemy(amount : int):
 func spawn_bullet(amount : int):
 	for i in range(0,amount):
 		var bullet_instance = bullet_spawn_scene.instantiate()
-		bullet_instance.global_position = global_position + Vector2(-40,0)
+		bullet_instance.global_position = global_position + Vector2(80,0)
 		get_tree().current_scene.add_child.call_deferred(bullet_instance)
+		await get_tree().create_timer(0.2).timeout
+		continue
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

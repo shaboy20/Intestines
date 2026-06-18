@@ -13,5 +13,5 @@ func _ready() -> void:
 func spawn_enemy(amount : int):
 	for i in range(0,amount):
 		var enemy_instance = enemy_spawn_scene.instantiate()
-		enemy_instance.position = Vector2(randf() * 200, randf() * 20) # Random position within a 800x600 area
+		enemy_instance.position = Vector2(randf() * 800, randf() * 200) # Random position within a 800x600 area
 		add_child(enemy_instance)

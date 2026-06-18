@@ -10,6 +10,7 @@ var player_in_collider = null
 var is_reatreating = false
 var is_taking_knockback : bool = false
 var is_attacking = false
+var paused_movment = false
 func _physics_process(delta):
 	if is_dying:
 		pass
@@ -28,16 +29,20 @@ func _physics_process(delta):
 				is_reatreating = false
 			if is_reatreating:
 				velocity = direction * speed * -1 * delta
-				if not is_stunned:
+				if not is_stunned and not paused_movment:
 					move_and_slide()
 			else:
 				velocity = direction * speed * delta
-				if not is_stunned:
+				if not is_stunned and not paused_movment:
 					move_and_slide()
 		
-			if is_taking_knockback:
+			if is_taking_knockback and not paused_movment:
 				velocity = -direction * speed * 10 * delta
 				move_and_slide()
+
+			if paused_movment:
+				pass
+
 		if global_position.distance_to(player.global_position) < 50 and not is_stunned:
 			sprite.play("attack")
 
@@ -63,12 +68,16 @@ func take_knockback() -> void:
 	await get_tree().create_timer(0.2).timeout
 	is_taking_knockback = false
 	
-
-
+func pause_move_and_slide():
+	paused_movment = true
+	await get_tree().create_timer(0.5).timeout
+	paused_movment = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	sprite.play("attack")
 	if body.has_method("player_take_damage") and not is_stunned && not is_dying:
 		body.player_take_damage(10)
+		pause_move_and_slide()
 		is_attacking = true
 		await get_tree().create_timer(1.0).timeout
+		is_attacking = false

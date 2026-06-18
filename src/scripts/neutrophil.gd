@@ -8,6 +8,8 @@ var bullet_cooldown = false
 var is_taking_knockback = false
 var paused_movment = false
 var is_stunned = false
+var is_retreating = false
+var retreat_cooldown = false
 @onready var collider = $Area2D/CollisionShape2D
 @onready var bullet_spawn_scene : PackedScene = preload("res://src/scenes/inter_lukin.tscn")
 @onready var progress_bar : ProgressBar = $ProgressBar
@@ -16,18 +18,33 @@ var is_stunned = false
 func _ready() -> void:
 	sprite.play("default")
 
+func set_retreat():
+	is_retreating = true
+	await get_tree().create_timer(3.0).timeout
+	is_retreating = false
+	retreat_cooldown = true
+	await get_tree().create_timer(6.0).timeout
+	retreat_cooldown = false
+
+
 func _physics_process(delta: float) -> void:
+	var chance = randf_range(0,1)
+	if chance <= 0.2 and health <= 50 and not retreat_cooldown:
+		set_retreat()	
 	player = get_tree().current_scene.find_child("Player", true, false) as CharacterBody2D
 	var direction_to_player = (player.global_position - global_position).normalized()
 	look_at(player.global_position)
 	if paused_movment or is_stunned:
-		velocity = Vector2.ZERO	
-	if not is_taking_knockback and global_position.distance_to(player.global_position) <= 800 :
+		velocity = Vector2.ZERO
+
+	if not is_taking_knockback and global_position.distance_to(player.global_position) <= 800 and not is_retreating and not is_stunned:
 		velocity = direction_to_player * speed * delta
-	elif is_taking_knockback:
+	elif is_taking_knockback and not is_stunned:
 		velocity = direction_to_player * speed * delta * -10
+	elif is_retreating and not is_stunned:
+		velocity = direction_to_player * speed * delta * -1
 	if global_position.distance_to(player.global_position) < 200 && not spawn_cooldown:
-		spawn_enemy(3)
+		spawn_enemy(1)
 		spawn_cooldown = true
 		await get_tree().create_timer(4).timeout
 		spawn_cooldown = false

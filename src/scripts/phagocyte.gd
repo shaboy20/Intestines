@@ -7,6 +7,8 @@ var is_retreating : bool = false
 var is_attacking = false
 var is_taking_knockback = false
 var is_stunned = false
+@onready var collider = $Area2D/CollisionShape2D
+var move_and_slide_not_allowed = false
 func _ready() -> void:
 
 	player = get_tree().current_scene.find_child("Player", true, false) as CharacterBody2D
@@ -64,20 +66,29 @@ func _physics_process(delta: float) -> void:
 			velocity = direction_to_player * randi_range(1000,1200) * -10 * delta
 		else:
 			return
-	
-		move_and_slide()
-
+		if move_and_slide_not_allowed and not is_taking_knockback:
+			pass
+		else:
+			move_and_slide()
 	
 func _process(delta: float) -> void:
 	if health <= 0:
 		queue_free()
+	collider.scale = Vector2(0.2,0.2)
+	await get_tree().create_timer(0.01).timeout
+	collider.scale = Vector2(1.2,1.2)
+	
 
+func pause_move_and_slide():
+		move_and_slide_not_allowed = true
+		await get_tree().create_timer(0.5).timeout
+		move_and_slide_not_allowed = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("player_take_damage") and not is_stunned:
 		is_attacking = true
 		sprite.play("attack")
-		await get_tree().create_timer(0.05).timeout
 		body.player_take_damage(10)
+		pause_move_and_slide()
 		await get_tree().create_timer(1.0).timeout
 		is_attacking = false

@@ -10,6 +10,9 @@ texture = ExtResource("3_rkeyg")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mob6k"]
 bg_color = Color(1, 0.29732522, 0.5207068, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkeyg"]
+bg_color = Color(1, 0.6, 0.6, 1)
+
 [node name="MainMenu" type="Node2D" unique_id=1666631314]
 script = ExtResource("1_06t4h")
 
@@ -46,6 +49,24 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_mob6k")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_mob6k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rkeyg")
 text = "start"
+
+[node name="Label" type="Label" parent="buttonManager" unique_id=2049393668]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.5
+offset_top = -240.0
+offset_right = 152.5
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_mob6k")
+theme_override_font_sizes/font_size = 64
+text = "Intestines"
 
 [connection signal="pressed" from="buttonManager/Start" to="." method="_on_start_pressed"]

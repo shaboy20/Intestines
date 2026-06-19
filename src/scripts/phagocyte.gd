@@ -9,11 +9,17 @@ var is_taking_knockback = false
 var is_stunned = false
 @onready var collider = $Area2D/CollisionShape2D
 var move_and_slide_not_allowed = false
+@export var particles_scene : PackedScene
 func _ready() -> void:
 
 	player = get_tree().current_scene.find_child("Player", true, false) as CharacterBody2D
 
 
+func spawn_particles():
+	await get_tree().create_timer(0.1).timeout
+	var instance = particles_scene.instantiate()
+	get_tree().current_scene.add_child(instance)
+	instance.global_position = global_position
 
 
 func take_damage(num : int):
@@ -26,7 +32,8 @@ func take_damage(num : int):
 func take_knockback() -> void:
 	is_taking_knockback = true
 	print(is_taking_knockback)
-	await get_tree().create_timer(0.4).timeout
+	spawn_particles()
+	await get_tree().create_timer(0.2).timeout
 	is_taking_knockback = false
 	print(is_taking_knockback)
 	is_stunned = true

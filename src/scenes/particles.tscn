@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b57wt0vapn6ep"]
+
+[ext_resource type="Texture2D" uid="uid://4u8cgpnpl6nx" path="res://assets/sprites/particles/particle.png" id="1_coxgj"]
+[ext_resource type="Script" uid="uid://7i25y3trtcvr" path="res://src/scripts/cpu_particles_2d.gd" id="2_ril8b"]
+
+[sub_resource type="Curve" id="Curve_coxgj"]
+_data = [Vector2(0.026595749, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.3595506), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Particles" type="Node2D" unique_id=1500594550]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=281236788]
+emitting = false
+amount = 14
+texture = ExtResource("1_coxgj")
+one_shot = true
+explosiveness = 0.79
+randomness = 1.0
+fixed_fps = 60
+spread = 180.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 300.0
+initial_velocity_max = 527.2
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_coxgj")
+script = ExtResource("2_ril8b")

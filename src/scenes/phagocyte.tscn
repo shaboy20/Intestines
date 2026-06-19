@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dyts3pq4dfg1v" path="res://src/scripts/phagocyte.gd" id="1_8hym3"]
 [ext_resource type="Texture2D" uid="uid://b13w23kbg4snc" path="res://assets/sprites/enemy/phagocyte/phagocyte-attack.png" id="2_8hym3"]
+[ext_resource type="PackedScene" uid="uid://b57wt0vapn6ep" path="res://src/scenes/particles.tscn" id="2_pqgun"]
 [ext_resource type="Texture2D" uid="uid://dsvbwroina5lm" path="res://assets/sprites/enemy/phagocyte/phagocyte-move.png" id="3_c4d3t"]
 [ext_resource type="Texture2D" uid="uid://dmanphv0n50mi" path="res://assets/sprites/enemy/phagocyte/damaged.png" id="3_pqgun"]
 
@@ -190,6 +191,7 @@ bg_color = Color(0.9907289, 0.3209944, 0.48704082, 1)
 rotation = 3.1415927
 scale = Vector2(2, 2)
 script = ExtResource("1_8hym3")
+particles_scene = ExtResource("2_pqgun")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1220952681]
 sprite_frames = SubResource("SpriteFrames_1n6m4")

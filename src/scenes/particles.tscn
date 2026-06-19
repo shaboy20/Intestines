@@ -13,6 +13,7 @@ point_count = 2
 emitting = false
 amount = 14
 texture = ExtResource("1_coxgj")
+lifetime = 0.2
 one_shot = true
 explosiveness = 0.79
 randomness = 1.0

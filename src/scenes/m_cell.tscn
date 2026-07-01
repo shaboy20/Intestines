@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://1svve45yxcf8"]
+
+[ext_resource type="Texture2D" uid="uid://b1o4e4xxitpqq" path="res://assets/sprites/terrain/M-cell.png" id="1_gcy33"]
+[ext_resource type="Script" uid="uid://cts8ymjrr5csu" path="res://src/scenes/m_cell.gd" id="2_4djld"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcy33"]
+radius = 31.009071
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcy33"]
+atlas = ExtResource("1_gcy33")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4djld"]
+atlas = ExtResource("1_gcy33")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4qsv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcy33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4djld")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="M-Cell" type="CharacterBody2D" unique_id=1997773632]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("2_4djld")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1766644624]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=66431247]
+position = Vector2(-2, -7)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_gcy33")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=540561048]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_u4qsv")
+frame_progress = 0.97563666

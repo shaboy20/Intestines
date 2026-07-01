@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ntaatdpkp2k" path="res://src/scenes/phagocyte.tscn" id="4_lgr22"]
 [ext_resource type="PackedScene" uid="uid://cuwg8v7t2j4j2" path="res://src/scenes/neutrophil.tscn" id="5_5vvyt"]
 [ext_resource type="PackedScene" uid="uid://c57170esl3sfw" path="res://src/scenes/enemy_spawner.tscn" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://1svve45yxcf8" path="res://src/scenes/m_cell.tscn" id="7_b1cw4"]
 
 [sub_resource type="Environment" id="Environment_20pc6"]
 background_mode = 3
@@ -77,3 +78,6 @@ spawn_amount = 1
 position = Vector2(13, 80)
 enemy_spawn_scene = ExtResource("2_q15jx")
 spawn_amount = 1
+
+[node name="M-Cell" parent="." unique_id=1997773632 instance=ExtResource("7_b1cw4")]
+position = Vector2(722, 402)
